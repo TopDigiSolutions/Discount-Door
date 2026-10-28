@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: #f4efe7;
+  --color-paper-deep: #e9e0d2;
+  --color-ink: #17201b;
+  --color-ink-soft: #26332b;
+  --color-moss: #314c3e;
+  --color-sage: #708576;
+  --color-rust: #c96032;
+  --color-rust-dark: #98401e;
+  --color-sun: #e6b44b;
+  --color-line: #d8cdbd;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--color-rust); color: white; }
+
+button, a, input, textarea, select { font: inherit; }
+
+.serif { font-family: var(--font-display); font-weight: 400; }
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.paper-grid {
+  background-image: linear-gradient(rgba(49, 76, 62, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(49, 76, 62, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.paper-noise::after, .dark-noise::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.2;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+}
+
+.dark-noise::after { opacity: 0.28; mix-blend-mode: screen; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--delay, 0ms);
+}
+
+.reveal[data-reveal="in"] { opacity: 1; transform: none; }
+.reveal-left { transform: translateX(-28px); }
+.reveal-left[data-reveal="in"] { transform: none; }
+
+.hero-title-line { display: block; overflow: hidden; }
+.hero-title-line > span { display: block; transform: translateY(105%); animation: rise 1s cubic-bezier(0.16, 0.84, 0.28, 1) forwards; animation-delay: var(--line-delay, 0ms); }
+@keyframes rise { to { transform: translateY(0); } }
+@keyframes slowZoom { from { transform: scale(1.02); } to { transform: scale(1.09); } }
+.hero-image { animation: slowZoom 18s ease-in-out infinite alternate; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+.float-gently { animation: float 5s ease-in-out infinite; }
+
+.underline-grow {
+  background-image: linear-gradient(var(--color-rust), var(--color-rust));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.35s ease;
+}
+.underline-grow:hover { background-size: 100% 2px; }
+
+.service-row .service-rule { transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.service-row:hover .service-rule, .service-row[data-open="true"] .service-rule { width: 100%; }
+.service-row .service-arrow { transition: transform 0.35s ease; }
+.service-row:hover .service-arrow, .service-row[data-open="true"] .service-arrow { transform: translateX(5px); }
+.gallery-image { transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.6s ease; }
+.gallery-tile:hover .gallery-image { transform: scale(1.055); filter: saturate(1.1); }
+
+.review-rail { scrollbar-width: thin; scrollbar-color: var(--color-sage) transparent; }
+.review-rail::-webkit-scrollbar { height: 6px; }
+.review-rail::-webkit-scrollbar-track { background: transparent; }
+.review-rail::-webkit-scrollbar-thumb { background: var(--color-sage); border-radius: 999px; }
+.map-filter { filter: sepia(0.22) saturate(0.78) contrast(1.02); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal, .reveal-left { opacity: 1; transform: none; }
+  .hero-title-line > span { transform: none; }
+}

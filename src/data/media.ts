@@ -1,0 +1,33 @@
+/** Curated photography (Pexels CDN) used across the site. */
+export const media = {
+  houstonHomes:
+    "https://images.pexels.com/photos/8278494/pexels-photo-8278494.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  brickHome:
+    "https://images.pexels.com/photos/31602311/pexels-photo-31602311.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  modernHomeGarage:
+    "https://images.pexels.com/photos/17158676/pexels-photo-17158676.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  whiteDoorFoliage:
+    "https://images.pexels.com/photos/12127819/pexels-photo-12127819.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  brickTownhomes:
+    "https://images.pexels.com/photos/7028099/pexels-photo-7028099.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  suburbanRow:
+    "https://images.pexels.com/photos/24524484/pexels-photo-24524484.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  toolboxWorker:
+    "https://images.pexels.com/photos/6474460/pexels-photo-6474460.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700",
+  hardwareSprings:
+    "https://images.pexels.com/photos/6972571/pexels-photo-6972571.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=700&w=940",
+  toolBelt:
+    "https://images.pexels.com/photos/8447885/pexels-photo-8447885.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700",
+  ladderWorker:
+    "https://images.pexels.com/photos/38346741/pexels-photo-38346741.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700",
+  workshopWorker:
+    "https://images.pexels.com/photos/8985914/pexels-photo-8985914.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  handTools:
+    "https://images.pexels.com/photos/8661618/pexels-photo-8661618.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  toolboxes:
+    "https://images.pexels.com/photos/4792489/pexels-photo-4792489.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  doorRoundWindows:
+    "https://images.pexels.com/photos/31406337/pexels-photo-31406337.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+  blueDoors:
+    "https://images.pexels.com/photos/29527707/pexels-photo-29527707.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=760&w=1100",
+};
